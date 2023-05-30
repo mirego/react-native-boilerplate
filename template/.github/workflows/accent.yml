@@ -1,0 +1,28 @@
+name: Accent
+
+on:
+  schedule:
+    - cron: "0 4 * * *"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - run: npm install -g accent-cli
+      - run: make accent-sync
+      - run: yarn install
+      - run: make format
+      - uses: peter-evans/create-pull-request@v4
+        with:
+          add-paths: "*.json"
+          commit-message: Update translations
+          committer: GitHub Actions <github-actions[bot]@users.noreply.github.com>
+          branch: accent
+          draft: false
+          delete-branch: true
+          title: New translations are available to merge
+          body: The translation files have been updated, feel free to merge this pull request after review.

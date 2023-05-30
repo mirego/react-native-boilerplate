@@ -1,0 +1,11 @@
+{
+  "apiKey": "your-api-key",
+  "apiUrl": "https://mirego.accent.reviews",
+  "files": [
+    {
+      "format": "json",
+      "source": "src/translations/en/*.json",
+      "target": "src/translations/%slug%/%document_path%.json"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "react-native-template-mirego",
+  "version": "0.0.1",
+  "description": "A React Native template by Mirego.",
+  "author": "Mathieu Dumont <mdumont@mirego.com>",
+  "license": "MIT",
+  "dependencies": {
+    "ora": "^5.4.1"
+  }
+}

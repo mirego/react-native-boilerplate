@@ -1,0 +1,9 @@
+{
+  "test": "test en",
+  "error-view": {
+    "maybe-client-issue": "Sorry, it seems like there’s a problem with your internet connection. Please check your connection and try again.",
+    "maybe-server-issue": "It looks like there’s an issue on our end. We apologize for the inconvenience. Please try again later.",
+    "retry": "Retry",
+    "title": "We encountered an unexpected problem"
+  }
+}
