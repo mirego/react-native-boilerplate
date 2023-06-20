@@ -6770,10 +6770,12 @@ react-native-gradle-plugin@^0.71.18:
   resolved "https://registry.yarnpkg.com/react-native-gradle-plugin/-/react-native-gradle-plugin-0.71.18.tgz#20ef199bc85be32e45bb6cc069ec2e7dcb1a74a6"
   integrity sha512-7F6bD7B8Xsn3JllxcwHhFcsl9aHIig47+3eN4IHFNqfLhZr++3ElDrcqfMzugM+niWbaMi7bJ0kAkAL8eCpdWg==
 
-react-native-killswitch@^0.0.2:
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/react-native-killswitch/-/react-native-killswitch-0.0.2.tgz#27aa74c556a2642c926c99db5853003040e711e0"
-  integrity sha512-sHwXqFFcn2pzsYg3kuhjOjIq1QLCB19Jwfg12pYfNHXF9LFEhRY99KWoAC7li5f3Rqo3GJrNUjhhK9ccvs9KIg==
+react-native-killswitch@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/react-native-killswitch/-/react-native-killswitch-0.0.3.tgz#0736a79ec4daf6636d999e645c869e0ddc236c85"
+  integrity sha512-QtmvHgbDD0AAJy+y2VOSg+JJORgCK5zjWvK4CepJ0k4gfl1LeKJfQiaLe5umxTWExyc8IK3Q+1j7uyWZImR8MA==
+  dependencies:
+    zod "^3.21.4"
 
 react-native-reanimated@^3.2.0:
   version "3.2.0"
@@ -8162,3 +8164,8 @@ yocto-queue@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/yocto-queue/-/yocto-queue-0.1.0.tgz#0294eb3dee05028d31ee1a5fa2c556a6aaf10a1b"
   integrity sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==
+
+zod@^3.21.4:
+  version "3.21.4"
+  resolved "https://registry.yarnpkg.com/zod/-/zod-3.21.4.tgz#10882231d992519f0a10b5dd58a38c9dabbb64db"
+  integrity sha512-m46AKbrzKVzOzs/DZgVnG5H55N1sv1M8qZU3A8RIKbs3mrACDNeIOeilDymVb2HdmP8uwshOCF4uJ8uM9rCqJw==

@@ -4,15 +4,15 @@ import {
   DefaultTheme,
   DarkTheme,
 } from '@react-navigation/native';
-// import { withBoundary } from '@millie/components/boundary';
-// import SplashScreen from 'react-native-splash-screen';
-import { useColorScheme } from 'react-native';
 import RootNavigator from './RootNavigator';
 import { withBoundary } from '~/components/boundary';
+import { useColorSchemeValue } from '~/hooks/use-color-scheme-value';
+import { useKillswitch } from '~/hooks/use-killswitch';
 
 function Navigation() {
-  const scheme = useColorScheme();
-  const theme = scheme === 'dark' ? DarkTheme : DefaultTheme;
+  const theme = useColorSchemeValue([DefaultTheme, DarkTheme]);
+
+  useKillswitch();
 
   return (
     <NavigationContainer
@@ -25,4 +25,3 @@ function Navigation() {
   );
 }
 export default withBoundary(Navigation);
-// export default withBoundary(Navigation);
