@@ -16,7 +16,7 @@ jobs:
       - run: make accent-sync
       - run: yarn install
       - run: make format
-      - uses: peter-evans/create-pull-request@v4
+      - uses: mirego/create-pull-request@v5
         with:
           add-paths: "*.json"
           commit-message: Update translations
