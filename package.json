@@ -3,7 +3,10 @@
   "version": "0.0.1",
   "description": "A React Native template by Mirego.",
   "author": "Mathieu Dumont <mdumont@mirego.com>",
-  "license": "MIT",
+  "contributors": [
+    "Charles Demers <cdemers@mirego.com>"
+  ],
+  "license": "BSD-3-Clause",
   "dependencies": {
     "ora": "^5.4.1"
   }

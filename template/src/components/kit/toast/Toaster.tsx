@@ -15,8 +15,8 @@ import Animated, {
   useAnimatedStyle,
 } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { useReanimatedKeyboardAnimation } from 'react-native-keyboard-controller';
 import { Toast, ToastProps } from './Toast';
-import useAnimatedKeyboard from '~/hooks/use-keyboard-height-shared-value';
 import { Flex } from '~/components/kit';
 
 type ToastPosition = 'top' | 'bottom';
@@ -135,7 +135,7 @@ function AnimatedToast({ toast, zIndex, removeToast }: AnimatedToastProps) {
 
 export function Toaster() {
   const insets = useSafeAreaInsets();
-  const keyboardHeight = useAnimatedKeyboard();
+  const { height: keyboardHeight } = useReanimatedKeyboardAnimation();
   const [toasts, { remove }] = useToasterContext();
   const topToasts = toasts.filter(({ position }) => position === 'top');
   const bottomToasts = toasts.filter(({ position }) => position === 'bottom');
