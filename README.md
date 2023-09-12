@@ -1,6 +1,8 @@
 <div align="center">
+  <img src="https://github.com/mirego/react-native-boilerplate/assets/425073/0ed2bbd5-2b0c-4be5-860e-8e23f92b1ded" />
+
   <p>
-    <strong>React Native Boilerplate</strong> is the stable base upon which we build our React Native projects at <a href="https://www.mirego.com">Mirego</a>. We want to share it with the world so you can build awesome React Native applications too.
+    <strong>React Native Boilerplate</strong> is the stable base upon which we build our React Native projects at <a href="https://www.mirego.com">Mirego</a>.<br>We want to share it with the world so you can build awesome React Native applications too.
   </p>
 </div>
 
