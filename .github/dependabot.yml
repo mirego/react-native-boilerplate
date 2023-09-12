@@ -1,0 +1,10 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/template"
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "bundler"
+    directory: "/template"
+    schedule:
+      interval: "weekly"
