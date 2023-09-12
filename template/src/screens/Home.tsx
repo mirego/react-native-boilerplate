@@ -18,13 +18,19 @@ export function HomeScreen({ navigation }: HomeScreenProps) {
 
   const [error, setError] = useState<Error | null>(null);
 
-  if (error) throw error;
+  if (error) {
+    throw error;
+  }
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <Flex grow gap={10} padding={20} fill justify="center" align="center">
-        <Text style={{ color: '#fff' }}>{t('test')}</Text>
+        <Text style={{ color: '#fff' }} testID="test-label">
+          {t('test')}
+        </Text>
+
         <ActivityIndicator size={50} />
+
         <Button onPress={() => navigation.navigate('ExampleBottomSheet')}>
           Bottom Sheet
         </Button>

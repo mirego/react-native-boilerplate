@@ -95,11 +95,11 @@ accent-sync:
 # Versioning
 # ------------------------------
 .PHONY: build-version
-build-version: 
+build-version:
 	- bundle exec fastlane version v:build
 
 .PHONY: patch-version
-patch-version: 
+patch-version:
 	- bundle exec fastlane version v:patch
 
 .PHONY: minor-version
