@@ -38,7 +38,7 @@
     "react-native-haptic-feedback": "^2.2.0",
     "react-native-keyboard-controller": "^1.5.8",
     "react-native-killswitch": "^0.0.3",
-    "react-native-reanimated": "^3.2.0",
+    "react-native-reanimated": "^3.5.1",
     "react-native-redash": "^18.1.0",
     "react-native-safe-area-context": "^4.5.3",
     "react-native-screens": "^3.20.0",
