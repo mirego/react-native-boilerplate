@@ -123,7 +123,9 @@ export function Toast({
   }, [onClose, windowWidth, translateX]);
 
   useEffect(() => {
-    if (!autoDismiss) return;
+    if (!autoDismiss) {
+      return;
+    }
 
     const timer = setTimeout(handleClose, autoDismissDelayMs);
 

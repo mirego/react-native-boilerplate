@@ -47,7 +47,9 @@ export const Lottie = React.forwardRef<
       ref={(lottie) => {
         internalRef.current = lottie;
 
-        if (!forwardedRef) return;
+        if (!forwardedRef) {
+          return;
+        }
 
         if (typeof forwardedRef === 'function') {
           forwardedRef(lottie);
