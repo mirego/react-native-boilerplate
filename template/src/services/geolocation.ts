@@ -80,6 +80,8 @@ export default class Geolocation {
   unsubscribe(callback: GeolocationSubscription) {
     this.eventEmitter.unsubscribe('position', callback);
 
+    this.subscriptionsCount--;
+
     if (this.subscriptionsCount === 0) {
       this.unwatchPosition();
     }
