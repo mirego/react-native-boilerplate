@@ -72,7 +72,9 @@ export default class Geolocation {
 
     this.subscriptionsCount++;
 
-    this.watchPosition();
+    if (this.subscriptionsCount === 1) {
+      this.watchPosition();
+    }
 
     callback(this.state);
   }
