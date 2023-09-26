@@ -1,6 +1,18 @@
 apply plugin: "com.android.application"
 apply plugin: "com.facebook.react"
 
+/** You can configure this mapping with different .env files for each of your build variants
+ *  Build variants will be matched using lower cases
+ *
+ * project.ext.envConfigFiles = [
+ *     qa: ".env.qa",
+ *     staging: ".env.staging",
+ *     prod: ".env.prod",
+ * ]
+*/
+
+apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
+
 /**
  * This is the configuration block to customize your React Native Android app.
  * By default you don't need to apply any configuration, just uncomment the lines you need.
@@ -80,6 +92,9 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
+
+        // react-native-config
+        resValue "string", "build_config_package", "com.projectname"
     }
 
     signingConfigs {

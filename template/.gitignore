@@ -52,6 +52,9 @@ yarn-error.log
 **/fastlane/screenshots
 **/fastlane/test_output
 
+# react-native-config codegen
+ios/tmp.xcconfig
+
 # Bundle artifact
 *.jsbundle
 
@@ -63,4 +66,5 @@ yarn-error.log
 .metro-health-check*
 
 # Local files
+.env
 *.local
