@@ -38,11 +38,11 @@ If you have installed node.js with a version manager e.g. asdf, nvm, etc. you wi
 
 ### Environment variables
 
-All required environment variables are documented in [`.env`](./.env).
+All required environment variables are documented in [`.env.template`](./.env.template).
 
 ### Initial setup
 
-1. Create `.env.local` from empty values in [`.env`](./.env)
+1. Create `.env` from empty values in [`.env.template`](./.env.template)
 2. Run the command `bundle install` to install the required packages for the setup
 4. Install dependencies with `make dependencies`
 

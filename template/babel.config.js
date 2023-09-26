@@ -20,15 +20,6 @@ module.exports = {
         ],
       },
     ],
-    [
-      'module:react-native-dotenv',
-      {
-        envName: 'APP_ENV',
-        moduleName: '@env',
-        path: '.env',
-        safe: true,
-      },
-    ],
     'react-native-reanimated/plugin', // must be last plugin
   ],
 };
