@@ -7579,10 +7579,10 @@ react-native@0.72.4:
     ws "^6.2.2"
     yargs "^17.6.2"
 
-react-query-kit@^1.4.5:
-  version "1.5.1"
-  resolved "https://registry.yarnpkg.com/react-query-kit/-/react-query-kit-1.5.1.tgz#c9cfe7d173eae020c59633bb10eb5e81a1dd2582"
-  integrity sha512-56lTvYSDpwFL3vi2OQ12uC0j58f50eQexgGDBGkmP0ut8DvL9GkNgBT5rHrJ+I+Qc5VJ7wI7HNAXj9VvnOcNDQ==
+react-query-kit@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/react-query-kit/-/react-query-kit-2.0.1.tgz#1e3d935581a9dbbc2b5f90f89ec0a54a6aa8228c"
+  integrity sha512-T3t2aT+3X5ppsw/vTDvZN7ZP1RiJA+czR51NrJ9JbUq4c144XmIXoA3Xq5mKTRXDNTChQveo/0Du470JAVMb0w==
 
 react-refresh@^0.4.0:
   version "0.4.3"

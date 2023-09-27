@@ -45,7 +45,7 @@
     "react-native-screens": "^3.20.0",
     "react-native-splash-screen": "^3.3.0",
     "react-native-svg": "^13.9.0",
-    "react-query-kit": "^1.4.5",
+    "react-query-kit": "^2.0.1",
     "reflect-metadata": "^0.1.13",
     "tsyringe": "^4.8.0"
   },
