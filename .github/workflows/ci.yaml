@@ -1,5 +1,9 @@
 name: CI
 
+defaults:
+  run:
+    working-directory: ./template
+
 on: [push, pull_request]
 
 jobs:
