@@ -9,11 +9,13 @@ import Geolocation, {
   GeolocationState,
   GeolocationStatus,
 } from '~/services/geolocation';
+import { useApplicationConfiguration } from '~/hooks/use-application-configuration';
 
 export type HomeScreenProps = RootStackScreenProps<'Home'>;
 
 export function HomeScreen({ navigation }: HomeScreenProps) {
   const geolocation = useService(Geolocation);
+  const apiUrl = useApplicationConfiguration('apiUrl');
 
   const [currentLocation, setCurrentLocation] = useState<GeolocationState>({
     status: GeolocationStatus.Pending,
@@ -49,6 +51,8 @@ export function HomeScreen({ navigation }: HomeScreenProps) {
       <Flex grow gap={10} padding={20} fill justify="center" align="center">
         <Text testID="test-label">{t('test')}</Text>
 
+        <Text>API URL: {apiUrl}</Text>
+
         {currentLocation.status === GeolocationStatus.Pending ? (
           <ActivityIndicator size={50} />
         ) : (
@@ -73,6 +77,10 @@ export function HomeScreen({ navigation }: HomeScreenProps) {
           }}
         >
           Error
+        </Button>
+
+        <Button onPress={() => navigation.navigate('SecretConfig')}>
+          Secret Config
         </Button>
       </Flex>
     </SafeAreaView>

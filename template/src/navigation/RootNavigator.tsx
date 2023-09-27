@@ -7,10 +7,12 @@ import {
 import React from 'react';
 import { HomeScreen } from '../screens/Home';
 import { ExampleBottomSheet } from '~/screens/bottom-sheets/ExampleBottomSheet';
+import { SecretConfigScreen } from '~/screens/SecretConfig';
 
 export type RootStackParamList = {
   Home: undefined;
   ExampleBottomSheet: undefined;
+  SecretConfig: undefined;
 };
 
 export type RootNavigationProp = NativeStackNavigationProp<RootStackParamList>;
@@ -36,6 +38,15 @@ function RootNavigator() {
           name="ExampleBottomSheet"
           component={ExampleBottomSheet}
         />
+      </Stack.Group>
+
+      <Stack.Group
+        screenOptions={{
+          presentation: 'fullScreenModal',
+          headerShown: true,
+        }}
+      >
+        <Stack.Screen name="SecretConfig" component={SecretConfigScreen} />
       </Stack.Group>
     </Stack.Navigator>
   );

@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { useKillswitch as useKillswitchLib } from 'react-native-killswitch';
-import Config from 'react-native-config'
+import Config from 'react-native-config';
 import DeviceInfo from 'react-native-device-info';
 
 export function useKillswitch() {
