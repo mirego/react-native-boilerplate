@@ -107,13 +107,21 @@ export function Button({
 
   function onPressIn(event: GestureResponderEvent) {
     props.onPressIn?.(event);
-    if (event.isDefaultPrevented()) return;
+
+    if (event.isDefaultPrevented()) {
+      return;
+    }
+
     isPressed.value = true;
   }
 
   function onPressOut(event: GestureResponderEvent) {
     props.onPressOut?.(event);
-    if (event.isDefaultPrevented()) return;
+
+    if (event.isDefaultPrevented()) {
+      return;
+    }
+
     isPressed.value = false;
   }
 

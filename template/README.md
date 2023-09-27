@@ -1,11 +1,11 @@
 # ProjectName
 
-| Section                                               | Description                                            |
-| ----------------------------------------------------- | ------------------------------------------------------ |
-| [🎯 Objectives and context](#-objectives-and-context) | Project introduction and context                       |
-| [🚧 Dependencies](#-dependencies)                     | Technical dependencies and how to install them         |
-| [🏎 Kickstart](#-kickstart)                            | Details on how to kickstart development on the project |
-| [🚀 Environments and builds](#-environments-and-builds)    | Environments, how to deploy and DevOps stuff           |
+| Section                                                 | Description                                            |
+| ------------------------------------------------------- | ------------------------------------------------------ |
+| [🎯 Objectives and context](#-objectives-and-context)   | Project introduction and context                       |
+| [🚧 Dependencies](#-dependencies)                       | Technical dependencies and how to install them         |
+| [🏎 Kickstart](#-kickstart)                              | Details on how to kickstart development on the project |
+| [🚀 Environments and builds](#-environments-and-builds) | Environments, how to deploy and DevOps stuff           |
 
 ## 🎯 Objectives and context
 
@@ -44,7 +44,7 @@ All required environment variables are documented in [`.env.template`](./.env.te
 
 1. Create `.env` from empty values in [`.env.template`](./.env.template)
 2. Run the command `bundle install` to install the required packages for the setup
-4. Install dependencies with `make dependencies`
+3. Install dependencies with `make dependencies`
 
 ### Run the application in development mode
 

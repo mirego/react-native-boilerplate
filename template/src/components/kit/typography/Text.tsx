@@ -55,7 +55,9 @@ export const Text = forwardRef<RNText, TextProps>(
   ) => {
     const colorValue = useColorSchemeValue(color);
     const baseStyle: TextStyle = {
-      // fontFamily: getFontFamily(family, weight, italic),
+      fontFamily: family,
+      fontStyle: italic ? 'italic' : 'normal',
+      fontWeight: weight,
       fontSize: size,
       lineHeight,
       color: colorValue,

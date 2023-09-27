@@ -63,7 +63,9 @@ export const BottomSheet = ({ children }: PropsWithChildren) => {
     .onChange(({ changeY }) => {
       const direction = Math.sign(changeY);
 
-      if (direction === UNKNOWN) return;
+      if (direction === UNKNOWN) {
+        return;
+      }
 
       if (direction === UP && translateY.value === height.value) {
         isPanning.value = false;
@@ -79,7 +81,10 @@ export const BottomSheet = ({ children }: PropsWithChildren) => {
       translateY.value = clamp(translateY.value - changeY, 0, height.value);
     })
     .onEnd(({ velocityY }) => {
-      if (!isPanning.value) return;
+      if (!isPanning.value) {
+        return;
+      }
+
       isPanning.value = false;
 
       const shouldClose =
@@ -96,7 +101,9 @@ export const BottomSheet = ({ children }: PropsWithChildren) => {
           restDisplacementThreshold: 1,
         },
         (finished) => {
-          if (finished && shouldClose) runOnJS(onClose)();
+          if (finished && shouldClose) {
+            runOnJS(onClose)();
+          }
         }
       );
     });
@@ -105,7 +112,9 @@ export const BottomSheet = ({ children }: PropsWithChildren) => {
   useAnimatedReaction(
     () => height.value > 0,
     (bottomSheetHasLayout) => {
-      if (!bottomSheetHasLayout) return;
+      if (!bottomSheetHasLayout) {
+        return;
+      }
 
       translateY.value = withDelay(
         150,
@@ -121,7 +130,9 @@ export const BottomSheet = ({ children }: PropsWithChildren) => {
 
   const beginClose = useCallback(() => {
     translateY.value = withTiming(0, {}, (finished) => {
-      if (finished) runOnJS(onClose)();
+      if (finished) {
+        runOnJS(onClose)();
+      }
     });
   }, [translateY, onClose]);
 

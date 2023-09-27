@@ -22,6 +22,9 @@ export function getFlexDirection(
 }
 
 export function getFlexGrowOrShrink(value: number | boolean) {
-  if (typeof value === 'boolean') return value ? 1 : 0;
+  if (typeof value === 'boolean') {
+    return value ? 1 : 0;
+  }
+
   return value;
 }

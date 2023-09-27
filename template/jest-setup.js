@@ -1,3 +1,4 @@
+import 'reflect-metadata';
 import mockAsyncStorage from '@react-native-async-storage/async-storage/jest/async-storage-mock';
 import mockRNCNetInfo from '@react-native-community/netinfo/jest/netinfo-mock.js';
 import mockSafeAreaContext from 'react-native-safe-area-context/jest/mock';
@@ -41,3 +42,15 @@ jest.mock('react-i18next', () => ({
 jest.mock('react-native-keyboard-controller', () =>
   require('react-native-keyboard-controller/jest')
 );
+
+jest.mock('@react-native-community/geolocation', () => {
+  return {
+    addListener: jest.fn(),
+    getCurrentPosition: jest.fn(),
+    removeListeners: jest.fn(),
+    requestAuthorization: jest.fn(),
+    setConfiguration: jest.fn(),
+    startObserving: jest.fn(),
+    stopObserving: jest.fn(),
+  };
+});
