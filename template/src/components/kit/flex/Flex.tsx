@@ -1,6 +1,5 @@
 import { ForwardedRef, forwardRef } from 'react';
 import {
-  DimensionValue,
   FlexStyle,
   StyleProp,
   StyleSheet,
@@ -25,16 +24,16 @@ export type FlexProps<C extends React.ElementType> = PolymorphicComponentProps<
     justify?: FlexStyle['justifyContent'];
     grow?: number | boolean;
     shrink?: number | boolean;
-    basis?: DimensionValue;
+    basis?: FlexStyle['flexBasis'];
     wrap?: boolean;
     absolute?: boolean;
-    zIndex?: number;
-    top?: number;
-    left?: number;
-    bottom?: number;
-    right?: number;
-    width?: DimensionValue;
-    height?: DimensionValue;
+    zIndex?: ViewStyle['zIndex'];
+    top?: ViewStyle['top'];
+    left?: ViewStyle['left'];
+    bottom?: ViewStyle['bottom'];
+    right?: ViewStyle['right'];
+    width?: ViewStyle['width'];
+    height?: ViewStyle['height'];
     fill?: boolean;
   }
 >;

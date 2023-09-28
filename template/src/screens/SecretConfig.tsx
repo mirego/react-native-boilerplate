@@ -1,3 +1,4 @@
+import RNRestart from 'react-native-restart';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useCallback, useEffect, useLayoutEffect, useState } from 'react';
 import { StyleSheet } from 'react-native';
@@ -31,22 +32,22 @@ export function SecretConfigScreen({ navigation }: SecretConfigScreenProps) {
   const applicationConfiguration = useService(ApplicationConfiguration);
 
   const [apiUrl, setApiUrl] = useState(
-    applicationConfiguration.getItem('apiUrl')
+    applicationConfiguration.getItem('API_URL')
   );
 
   useEffect(() => {
     return applicationConfiguration.subscribe((config) => {
-      if (config.key === 'apiUrl') {
+      if (config.key === 'API_URL') {
         setApiUrl(config.value);
       }
     });
   }, [applicationConfiguration]);
 
   const saveAll = useCallback(() => {
-    applicationConfiguration.setItem('apiUrl', apiUrl);
+    applicationConfiguration.setItem('API_URL', apiUrl);
 
-    navigation.goBack();
-  }, [apiUrl, applicationConfiguration, navigation]);
+    RNRestart.restart();
+  }, [apiUrl, applicationConfiguration]);
 
   const resetConfig = useCallback(
     (configName: ApplicationConfigurationKey) => {
@@ -77,15 +78,13 @@ export function SecretConfigScreen({ navigation }: SecretConfigScreenProps) {
             <Text weight="700">{t('labels.api-url')}</Text>
 
             <Flex gap={8} row>
-              <Flex
-                as={TextInput}
-                grow
+              <TextInput
                 value={apiUrl}
                 onChangeText={setApiUrl}
                 style={styles.textInput}
               />
 
-              <Button theme="secondary" onPress={() => resetConfig('apiUrl')}>
+              <Button theme="secondary" onPress={() => resetConfig('API_URL')}>
                 {t('reset')}
               </Button>
             </Flex>
@@ -119,6 +118,7 @@ export function SecretConfigScreen({ navigation }: SecretConfigScreenProps) {
 
 const styles = StyleSheet.create({
   textInput: {
+    flexGrow: 1,
     padding: 8,
     borderWidth: 1,
     borderColor: '#aaa',

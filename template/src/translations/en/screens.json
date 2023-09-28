@@ -12,7 +12,7 @@
       "api-url": "API URL"
     },
     "reset": "Reset",
-    "save": "Save",
+    "save": "Save and restart",
     "title": "Secret configuration"
   }
 }

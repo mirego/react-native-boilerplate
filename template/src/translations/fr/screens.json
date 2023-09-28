@@ -12,7 +12,7 @@
       "api-url": "URL de l’API"
     },
     "reset": "Réinitialiser",
-    "save": "Enregistrer",
+    "save": "Enregistrer et redémarrer",
     "title": "Configuration secrète"
   }
 }

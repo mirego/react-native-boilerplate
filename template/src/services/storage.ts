@@ -27,9 +27,7 @@ export default class Storage<KeyType extends string> {
     });
   }
 
-  protected get storage() {
-    return new MMKV();
-  }
+  protected storage = new MMKV();
 
   getItem(key: KeyType) {
     const value = this.storage.getString(key);

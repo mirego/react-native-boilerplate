@@ -8,6 +8,7 @@ import React from 'react';
 import { HomeScreen } from '../screens/Home';
 import { ExampleBottomSheet } from '~/screens/bottom-sheets/ExampleBottomSheet';
 import { SecretConfigScreen } from '~/screens/SecretConfig';
+import { useApplicationConfiguration } from '~/hooks/use-application-configuration';
 
 export type RootStackParamList = {
   Home: undefined;
@@ -23,6 +24,10 @@ export type RootStackScreenProps<Screen extends keyof RootStackParamList> =
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 function RootNavigator() {
+  const secretPanelEnabled = useApplicationConfiguration(
+    'SECRET_PANEL_ENABLED'
+  );
+
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="Home" component={HomeScreen} />
@@ -40,14 +45,16 @@ function RootNavigator() {
         />
       </Stack.Group>
 
-      <Stack.Group
-        screenOptions={{
-          presentation: 'fullScreenModal',
-          headerShown: true,
-        }}
-      >
-        <Stack.Screen name="SecretConfig" component={SecretConfigScreen} />
-      </Stack.Group>
+      {secretPanelEnabled && (
+        <Stack.Group
+          screenOptions={{
+            presentation: 'fullScreenModal',
+            headerShown: true,
+          }}
+        >
+          <Stack.Screen name="SecretConfig" component={SecretConfigScreen} />
+        </Stack.Group>
+      )}
     </Stack.Navigator>
   );
 }
