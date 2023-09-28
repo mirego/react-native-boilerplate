@@ -1,5 +1,4 @@
 import Config from 'react-native-config';
-import { MMKV } from 'react-native-mmkv';
 import { singleton } from 'tsyringe';
 import Storage from '~/services/storage';
 
@@ -17,8 +16,6 @@ export default class ApplicationConfiguration extends Storage<ApplicationConfigu
     KILLSWITCH_API_URL: Config.KILLSWITCH_API_URL!,
     SECRET_PANEL_ENABLED: this.asBoolean(Config.SECRET_PANEL_ENABLED!),
   };
-
-  protected storage = new MMKV({ id: 'application-configuration' });
 
   getItem(key: ApplicationConfigurationKey) {
     const value = super.getItem(key);
