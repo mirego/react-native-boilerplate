@@ -18,7 +18,7 @@ To learn more about why we created and maintain this boilerplate project, read o
     ```
 2. Initialize your project with the template
     ```
-    npx react-native init YourProjectName --template path/to/react-native-boilerplate
+    npx react-native@latest init YourProjectName --template path/to/react-native-boilerplate
     ```
 
 ## License
