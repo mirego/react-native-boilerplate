@@ -1,0 +1,62 @@
+# Built application files
+template/android/*/build/
+
+# Crashlytics configuations
+template/android/com_crashlytics_export_strings.xml
+
+# Local configuration file (sdk path, etc)
+template/android/local.properties
+
+# Gradle generated files
+template/android/.gradle/
+
+# Signing files
+template/android/.signing/
+
+# User-specific configurations
+template/android/.idea/gradle.xml
+template/android/.idea/libraries/
+template/android/.idea/workspace.xml
+template/android/.idea/tasks.xml
+template/android/.idea/.name
+template/android/.idea/compiler.xml
+template/android/.idea/copyright/profiles_settings.xml
+template/android/.idea/encodings.xml
+template/android/.idea/misc.xml
+template/android/.idea/modules.xml
+template/android/.idea/scopes/scope_settings.xml
+template/android/.idea/vcs.xml
+template/android/*.iml
+
+# Xcode
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+*.xcuserstate
+template/ios/Pods
+template/ios/build
+*project.xcworkspace*
+*xcuserdata*
+
+# OS-specific files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Android
+template/android/build
+template/android/.settings
+
+.idea
+yarn.lock
+.github
+.vscode
+.nyc_output
+*.coverage.json
+.circleci
+.eslintignore
