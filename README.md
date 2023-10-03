@@ -22,6 +22,8 @@ npx react-native@latest init YourProjectName --template @mirego/react-native-boi
 
 react-native-boilerplate is © 2023 [Mirego](https://www.mirego.com) and may be freely distributed under the [New BSD license](http://opensource.org/licenses/BSD-3-Clause). See the [`LICENSE.md`](./LICENSE.md) file.
 
+The logo is based on [this lovely icon by businessicons13](https://thenounproject.com/icon/science-2583979/), from The Noun Project. Used under a [Creative Commons BY 3.0](http://creativecommons.org/licenses/by/3.0/) license.
+
 ## About Mirego
 
 [Mirego](https://www.mirego.com) is a team of passionate people who believe that work is a place where you can innovate and have fun. We’re a team of [talented people](https://life.mirego.com) who imagine and build beautiful Web and mobile applications. We come together to share ideas and [change the world](http://www.mirego.org).
