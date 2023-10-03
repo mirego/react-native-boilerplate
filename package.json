@@ -1,5 +1,5 @@
 {
-  "name": "react-native-template-mirego",
+  "name": "@mirego/react-native-boilerplate",
   "version": "0.0.1",
   "description": "A React Native template by Mirego.",
   "author": "Mathieu Dumont <mdumont@mirego.com>",
@@ -9,5 +9,20 @@
   "license": "BSD-3-Clause",
   "dependencies": {
     "ora": "^5.4.1"
-  }
+  },
+  "main": "script.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mirego/react-native-boilerplate.git"
+  },
+  "keywords": [
+    "react",
+    "native",
+    "boilerplate",
+    "mirego"
+  ],
+  "bugs": {
+    "url": "https://github.com/mirego/react-native-boilerplate/issues"
+  },
+  "homepage": "https://github.com/mirego/react-native-boilerplate#readme"
 }

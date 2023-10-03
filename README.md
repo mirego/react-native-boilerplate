@@ -11,14 +11,11 @@ To learn more about why we created and maintain this boilerplate project, read o
 
 ## Usage
 
-1. Clone this repository
-    ```
-    git clone git@github.com:mirego/react-native-boilerplate.git
-    ```
-2. Initialize your project with the template
-    ```
-    npx react-native@latest init YourProjectName --template path/to/react-native-boilerplate
-    ```
+Initialize your project with the template
+
+```
+npx react-native@latest init YourProjectName --template @mirego/react-native-boilerplate
+```
 
 ## License
 
