@@ -22,7 +22,7 @@
 
 ## 📓 Reference
 
-[MHT-123](https://mirego.atlassian.net/browse/MHT-123)
+[AAA-123](https://mirego.atlassian.net/browse/AAA-123)
 
 ## 🦀 Dispatch
 
