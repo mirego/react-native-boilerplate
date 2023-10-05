@@ -9,6 +9,16 @@
 
 # Add any project specific keep options here:
 
-# com.mypackage should match the package value in your app/src/main/AndroidManifest.xml file.
--keep class com.mypackage.BuildConfig { *; }
+# com.projectname should match the package value in your app/src/main/AndroidManifest.xml file.
+-keep class com.projectname.BuildConfig { *; }
 -keepresources string/build_config_package
+
+# Strip logging from production builds
+-assumenosideeffects class android.util.Log {
+    public static boolean isLoggable(java.lang.String, int);
+    public static int v(...);
+    public static int i(...);
+    public static int w(...);
+    public static int d(...);
+    public static int e(...);
+}
