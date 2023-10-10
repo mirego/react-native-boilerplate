@@ -4,9 +4,7 @@ import {
   NativeStackNavigationProp,
   NativeStackScreenProps,
 } from '@react-navigation/native-stack';
-import React, { useEffect, useRef } from 'react';
-import { useTranslation } from 'react-i18next';
-import { useQueryClient } from '@tanstack/react-query';
+import React from 'react';
 import { HomeScreen } from '../screens/Home';
 import { ExampleBottomSheet } from '~/screens/bottom-sheets/ExampleBottomSheet';
 import { SecretConfigScreen } from '~/screens/SecretConfig';
@@ -26,25 +24,9 @@ export type RootStackScreenProps<Screen extends keyof RootStackParamList> =
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 function RootNavigator() {
-  const { i18n } = useTranslation();
-  const languageRef = useRef(i18n.language);
-  const queryClient = useQueryClient();
-
   const secretPanelEnabled = useApplicationConfiguration(
     'SECRET_PANEL_ENABLED'
   );
-
-  useEffect(() => {
-    if (i18n.language === languageRef.current) {
-      return;
-    }
-
-    // Evict everything from the cache but don't refetch anything. Queries will
-    // be refetched when they become "enabled" when their screen gains focus.
-    queryClient.invalidateQueries({
-      refetchType: 'none',
-    });
-  }, [queryClient, i18n.language]);
 
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
