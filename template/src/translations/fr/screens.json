@@ -1,0 +1,18 @@
+{
+  "test": "test fr",
+  "error-view": {
+    "maybe-client-issue": "Désolé, il semble y avoir un problème avec votre connexion Internet. Veuillez vérifier votre connexion et réessayer.",
+    "maybe-server-issue": "Il semble qu’il y ait un problème de notre côté. Nous nous excusons pour le dérangement. Veuillez réessayer plus tard.",
+    "retry": "Ressayer",
+    "title": "Nous avons rencontré un problème inattendu"
+  },
+  "secret-config": {
+    "cancel": "Annuler",
+    "labels": {
+      "api-url": "URL de l’API"
+    },
+    "reset": "Réinitialiser",
+    "save": "Enregistrer et redémarrer",
+    "title": "Configuration secrète"
+  }
+}

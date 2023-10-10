@@ -2,8 +2,9 @@
 
 import i18n, { LanguageDetectorAsyncModule } from 'i18next';
 import { initReactI18next } from 'react-i18next';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Platform, NativeModules } from 'react-native';
+import { container } from 'tsyringe';
+import Storage from '~/services/storage';
 import resources from '~/translations';
 // import {setDefaultOptions} from 'date-fns';
 // import {enCA, frCA} from 'date-fns/locale';
@@ -35,6 +36,8 @@ function getDeviceLanguage() {
   }
 }
 
+const storage = container.resolve(Storage);
+
 export const languageDetectorPlugin: LanguageDetectorAsyncModule = {
   type: 'languageDetector',
   async: true,
@@ -42,7 +45,7 @@ export const languageDetectorPlugin: LanguageDetectorAsyncModule = {
 
   async detect() {
     try {
-      const language = await AsyncStorage.getItem('language');
+      const language = storage.getItem('language');
 
       const finalLanguage = language || getDeviceLanguage();
 
@@ -55,7 +58,7 @@ export const languageDetectorPlugin: LanguageDetectorAsyncModule = {
 
   async cacheUserLanguage(language: string) {
     try {
-      await AsyncStorage.setItem('language', language);
+      await storage.setItem('language', language);
       // setDefaultOptions({locale: language === 'fr' ? frCA : enCA});
     } catch (error) {}
   },
@@ -76,26 +79,26 @@ if (!i18n.isInitialized) {
     });
 }
 
-// if (module.hot) {
-//   module.hot.accept(async () => {
-//     const {default: newResources} = await import('~/translations');
+if (module.hot) {
+  module.hot.accept(async () => {
+    const { default: newResources } = await import('~/translations');
 
-//     for (const language in newResources) {
-//       const namespaces = newResources[language as keyof typeof newResources];
+    for (const language in newResources) {
+      const namespaces = newResources[language as keyof typeof newResources];
 
-//       for (const namespace in namespaces) {
-//         i18n.addResourceBundle(
-//           language,
-//           namespace,
-//           namespaces[namespace as keyof typeof namespaces],
-//           true,
-//           true,
-//         );
-//       }
-//     }
+      for (const namespace in namespaces) {
+        i18n.addResourceBundle(
+          language,
+          namespace,
+          namespaces[namespace as keyof typeof namespaces],
+          true,
+          true
+        );
+      }
+    }
 
-//     i18n.changeLanguage(i18n.language);
-//   });
-// }
+    i18n.changeLanguage(i18n.language);
+  });
+}
 
 export default i18n;

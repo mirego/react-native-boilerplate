@@ -24,16 +24,16 @@ export type FlexProps<C extends React.ElementType> = PolymorphicComponentProps<
     justify?: FlexStyle['justifyContent'];
     grow?: number | boolean;
     shrink?: number | boolean;
-    basis?: string | number;
+    basis?: FlexStyle['flexBasis'];
     wrap?: boolean;
     absolute?: boolean;
-    zIndex?: number;
-    top?: number;
-    left?: number;
-    bottom?: number;
-    right?: number;
-    width?: string | number;
-    height?: string | number;
+    zIndex?: ViewStyle['zIndex'];
+    top?: ViewStyle['top'];
+    left?: ViewStyle['left'];
+    bottom?: ViewStyle['bottom'];
+    right?: ViewStyle['right'];
+    width?: ViewStyle['width'];
+    height?: ViewStyle['height'];
     fill?: boolean;
   }
 >;

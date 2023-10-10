@@ -1,15 +1,21 @@
 import { useTranslation } from 'react-i18next';
 import { useKillswitch as useKillswitchLib } from 'react-native-killswitch';
-import Config from 'react-native-config'
 import DeviceInfo from 'react-native-device-info';
+import { useApplicationConfiguration } from '~/hooks/use-application-configuration';
 
 export function useKillswitch() {
   const { i18n } = useTranslation();
 
+  const apiHost = useApplicationConfiguration('KILLSWITCH_API_URL');
+  const iosApiKey = useApplicationConfiguration('KILLSWITCH_API_KEY_IOS');
+  const androidApiKey = useApplicationConfiguration(
+    'KILLSWITCH_API_KEY_ANDROID'
+  );
+
   return useKillswitchLib({
-    iosApiKey: Config.KILLSWITCH_API_KEY_IOS!,
-    androidApiKey: Config.KILLSWITCH_API_KEY_ANDROID!,
-    apiHost: Config.KILLSWITCH_API_URL!,
+    apiHost,
+    iosApiKey,
+    androidApiKey,
     language: i18n.language,
     version: DeviceInfo.getVersion(),
   });

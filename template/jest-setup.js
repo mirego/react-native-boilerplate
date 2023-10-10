@@ -1,5 +1,4 @@
 import 'reflect-metadata';
-import mockAsyncStorage from '@react-native-async-storage/async-storage/jest/async-storage-mock';
 import mockRNCNetInfo from '@react-native-community/netinfo/jest/netinfo-mock.js';
 import mockSafeAreaContext from 'react-native-safe-area-context/jest/mock';
 import mockDeviceInfo from 'react-native-device-info/jest/react-native-device-info-mock';
@@ -7,7 +6,6 @@ import mockDeviceInfo from 'react-native-device-info/jest/react-native-device-in
 import 'react-native-gesture-handler/jestSetup';
 
 jest.mock('@react-native-community/netinfo', () => mockRNCNetInfo);
-jest.mock('@react-native-async-storage/async-storage', () => mockAsyncStorage);
 jest.mock('react-native-safe-area-context', () => mockSafeAreaContext);
 jest.mock('react-native-device-info', () => mockDeviceInfo);
 
