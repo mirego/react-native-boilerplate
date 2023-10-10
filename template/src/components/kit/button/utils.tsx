@@ -1,5 +1,4 @@
-import { ColorScheme } from '@millie/services/color-scheme';
-import { ViewStyle } from 'react-native';
+import { ColorSchemeName, ViewStyle } from 'react-native';
 import {
   ButtonSize,
   ButtonState,
@@ -89,7 +88,7 @@ export const buttonColors: Record<ButtonTheme, ButtonStateColor> = {
 export function getButtonColor(
   theme: ButtonTheme,
   state: ButtonState,
-  scheme: ColorScheme
+  scheme: ColorSchemeName
 ) {
   return buttonColors[theme][state][scheme === 'light' ? 0 : 1];
 }
@@ -97,7 +96,7 @@ export function getButtonColor(
 export function getButtonColorWorklet(
   theme: ButtonTheme,
   state: ButtonState,
-  scheme: ColorScheme
+  scheme: ColorSchemeName
 ) {
   'worklet';
   return buttonColors[theme][state][scheme === 'light' ? 0 : 1];

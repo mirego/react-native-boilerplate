@@ -8,7 +8,7 @@ const applicationConfiguration = container.resolve(ApplicationConfiguration);
 const API = axios.create();
 
 API.interceptors.request.use((request) => {
-  request.baseURL = applicationConfiguration.getItem('apiUrl');
+  request.baseURL = applicationConfiguration.getItem('API_URL');
 
   request.headers = request.headers || {};
   request.headers['Accept-Language'] = i18n.language;

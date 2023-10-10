@@ -14,18 +14,18 @@ on:
         default: 'qa'
         type: choice
         options:
-        - qa
-        - client
-        - prod
+          - qa
+          - client
+          - prod
       platform:
         description: 'Platform'
         required: true
         default: 'all'
         type: choice
         options:
-        - all
-        - ios
-        - android
+          - all
+          - ios
+          - android
 
 jobs:
   build:
@@ -34,11 +34,11 @@ jobs:
     strategy:
       matrix:
         include:
-        - platform: android
-          os: ubuntu-latest
+          - platform: android
+            os: ubuntu-latest
 
-        - platform: ios
-          os: macos-latest
+          - platform: ios
+            os: macos-latest
     steps:
       - name: Precondition
         id: skip
@@ -62,7 +62,7 @@ jobs:
           restore-keys: cocoapods-
           path: |
             ios/Pods
-            ios/Millie.xcworkspace
+            ios/ProjectName.xcworkspace
 
       - name: Gradle cache
         if: steps.skip.outputs.should_skip == 'false'
@@ -86,7 +86,7 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
-          
+
       - name: Setup Node.js
         if: steps.skip.outputs.should_skip == 'false'
         uses: actions/setup-node@v3
@@ -142,7 +142,7 @@ jobs:
         with:
           ref: ${{github.event.inputs.reference}}
           fetch-depth: 0
-      
+
       - uses: actions/cache@v3
         with:
           path: '**/node_modules'
@@ -152,7 +152,7 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
-          
+
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:

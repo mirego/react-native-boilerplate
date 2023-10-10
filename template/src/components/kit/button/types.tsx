@@ -1,5 +1,5 @@
-import { ColorSchemeValue } from '@millie/hooks/use-color-scheme-value';
 import { ViewStyle } from 'react-native';
+import { ColorSchemeValue } from '~/hooks/use-color-scheme-value';
 
 export type ButtonTheme = 'primary' | 'secondary' | 'outlined';
 export type ButtonSize = 'large' | 'small' | 'tiny' | 'mini';
