@@ -7215,10 +7215,10 @@ react-native-reanimated@^3.5.1:
     convert-source-map "^2.0.0"
     invariant "^2.2.4"
 
-react-native-redash@^18.1.0:
-  version "18.1.0"
-  resolved "https://registry.yarnpkg.com/react-native-redash/-/react-native-redash-18.1.0.tgz#ebebace19d0d2ed877cb6836b8c824b49354eb93"
-  integrity sha512-bdCFl/ZB7Rf2raIlU6SLV+Dc/rL6UXsQNjEVwTGBukHMeSKp1zs4zVtWaGimbN8P22N4qYvb9Jmw/K94ZWYG0Q==
+react-native-redash@^18.1.1:
+  version "18.1.1"
+  resolved "https://registry.yarnpkg.com/react-native-redash/-/react-native-redash-18.1.1.tgz#82182f6462231203e0faf4f54a8a957050351d20"
+  integrity sha512-52k4VSpJO5uFFNLbZhUj1KrOUsbxF/vP4AvnTGXUVx1PyRubpPiGbtTMCFShQ2T01bAB9JRSZwX0LWfzcG55pQ==
   dependencies:
     abs-svg-path "^0.1.1"
     normalize-svg-path "^1.0.1"
