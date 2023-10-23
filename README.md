@@ -12,6 +12,8 @@ To learn more about why we created and maintain this boilerplate project, read o
 
 ## Usage
 
+Make sure that `yarn` is correctly configured before using the boilerplate. Otherwise, you might encounter some packaging errors when using other tools like `npm`.
+
 Initialize your project with the template
 
 ```
