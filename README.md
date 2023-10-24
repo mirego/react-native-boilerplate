@@ -12,6 +12,16 @@ To learn more about why we created and maintain this boilerplate project, read o
 
 ## Usage
 
+### Package Manager
+
+Make sure that `yarn` is correctly configured before using the boilerplate. Otherwise, you might encounter some packaging errors when using other tools like `npm`.
+
+This also means that every command you would usually run with `npm` needs to be run with `yarn` instead.
+
+eg. `yarn foo bar` instead of `npm foo bar`
+
+### Initialization
+
 Initialize your project with the template
 
 ```
