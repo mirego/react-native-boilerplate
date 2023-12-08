@@ -14,7 +14,7 @@ enableFreeze(true);
 
 function App() {
   return (
-    <KeyboardProvider>
+    <KeyboardProvider statusBarTranslucent navigationBarTranslucent>
       <QueryClientProvider client={queryClient}>
         <GestureHandlerRootView style={{ flex: 1 }}>
           <Boundary>

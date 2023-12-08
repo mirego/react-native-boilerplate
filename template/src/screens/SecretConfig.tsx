@@ -1,7 +1,7 @@
 import RNRestart from 'react-native-restart';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useCallback, useEffect, useLayoutEffect, useState } from 'react';
-import { StyleSheet } from 'react-native';
+import { StatusBar, StyleSheet } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import { ScrollView, TextInput } from 'react-native-gesture-handler';
 import { RootStackScreenProps } from '../navigation/RootNavigator';
@@ -21,6 +21,10 @@ export function SecretConfigScreen({ navigation }: SecretConfigScreenProps) {
   useLayoutEffect(() => {
     navigation.setOptions({
       headerTitle: t('title'),
+      headerTitleStyle: {
+        color: '#2F364F',
+      },
+      headerTintColor: '#2F364F',
       headerStyle: {
         backgroundColor: '#eee',
       },
@@ -67,6 +71,13 @@ export function SecretConfigScreen({ navigation }: SecretConfigScreenProps) {
       justify="space-between"
       padding={[0, 0, FOOTER_HEIGHT + insets.bottom]}
     >
+      <StatusBar
+        barStyle="dark-content"
+        backgroundColor="transparent"
+        translucent
+        animated
+      />
+
       <ScrollView
         contentContainerStyle={{
           paddingVertical: 30,
@@ -75,7 +86,9 @@ export function SecretConfigScreen({ navigation }: SecretConfigScreenProps) {
       >
         <Flex gap={20}>
           <Flex gap={3}>
-            <Text weight="700">{t('labels.api-url')}</Text>
+            <Text color="#2F364F" weight="700">
+              {t('labels.api-url')}
+            </Text>
 
             <Flex gap={8} row>
               <TextInput
@@ -96,11 +109,11 @@ export function SecretConfigScreen({ navigation }: SecretConfigScreenProps) {
         absolute
         bottom={0}
         left={0}
-        height={FOOTER_HEIGHT + insets.bottom}
+        height={FOOTER_HEIGHT + insets.bottom + 15}
         width="100%"
         row
         gap={8}
-        padding={[15, 20, insets.bottom]}
+        padding={[15, 20, insets.bottom + 15]}
         backgroundColor="#eee"
         style={styles.footer}
       >
