@@ -1,5 +1,7 @@
 import 'reflect-metadata';
-import mockRNCNetInfo from '@react-native-community/netinfo/jest/netinfo-mock.js';
+import '@testing-library/react-native/extend-expect';
+import { jest } from '@jest/globals';
+import mockRNCNetInfo from '@react-native-community/netinfo/jest/netinfo-mock';
 import mockSafeAreaContext from 'react-native-safe-area-context/jest/mock';
 import mockDeviceInfo from 'react-native-device-info/jest/react-native-device-info-mock';
 
