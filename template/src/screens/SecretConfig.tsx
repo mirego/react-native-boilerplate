@@ -67,7 +67,7 @@ export function SecretConfigScreen({ navigation }: SecretConfigScreenProps) {
   return (
     <Flex
       grow
-      backgroundColor="#eee"
+      background="#eee"
       justify="space-between"
       padding={[0, 0, FOOTER_HEIGHT + insets.bottom]}
     >
@@ -114,7 +114,7 @@ export function SecretConfigScreen({ navigation }: SecretConfigScreenProps) {
         row
         gap={8}
         padding={[15, 20, insets.bottom + 15]}
-        backgroundColor="#eee"
+        background="#eee"
         style={styles.footer}
       >
         <Flex as={Button} theme="secondary" grow onPress={cancel}>
