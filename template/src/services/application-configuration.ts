@@ -15,6 +15,7 @@ export default class ApplicationConfiguration extends Storage<ApplicationConfigu
     KILLSWITCH_API_KEY_IOS: Config.KILLSWITCH_API_KEY_IOS!,
     KILLSWITCH_API_URL: Config.KILLSWITCH_API_URL!,
     SECRET_PANEL_ENABLED: this.asBoolean(Config.SECRET_PANEL_ENABLED!),
+    STORAGE_KEY_PREFIX: Config.STORAGE_KEY_PREFIX!,
   };
 
   getItem(key: ApplicationConfigurationKey) {
