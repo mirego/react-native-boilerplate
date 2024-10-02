@@ -54,3 +54,18 @@ jest.mock('@react-native-community/geolocation', () => {
     stopObserving: jest.fn(),
   };
 });
+
+jest.mock('@react-native-firebase/remote-config', () => ({
+  __esModule: true,
+  default: () => ({
+    setDefaults: jest.fn(() => Promise.resolve()),
+    onConfigUpdated: jest.fn(),
+    fetchAndActivate: jest.fn(() => Promise.resolve()),
+    setConfigSettings: jest.fn(() => Promise.resolve()),
+    getValue: jest.fn(() => ({
+      asBoolean: jest.fn(),
+      asNumber: jest.fn(),
+      asString: jest.fn(),
+    })),
+  }),
+}));
