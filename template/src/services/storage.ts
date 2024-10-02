@@ -2,43 +2,43 @@ import { MMKV } from 'react-native-mmkv';
 import { singleton } from 'tsyringe';
 import EventEmitter from '~/services/event-emitter';
 
-export interface StorageSubscriptionParams<KeyType> {
-  key: KeyType;
+export interface StorageSubscriptionParams {
+  key: string;
   value: any;
 }
 
-export type StorageSubscription<KeyType> = (
-  params: StorageSubscriptionParams<KeyType>
-) => void;
+export type StorageSubscription = (params: StorageSubscriptionParams) => void;
 
 @singleton()
-export default class Storage<KeyType extends string> {
+export default class Storage {
   constructor(
-    private eventEmitter: EventEmitter<
-      'storage',
-      StorageSubscriptionParams<KeyType>
-    >
+    private eventEmitter: EventEmitter<'storage', StorageSubscriptionParams>
   ) {
     this.storage.addOnValueChangedListener((changedKey) => {
       this.eventEmitter.emit('storage', {
-        key: changedKey as KeyType,
-        value: this.getItem(changedKey as KeyType),
+        key: changedKey,
+        value: this.getItem(changedKey),
       });
     });
   }
 
   storage = new MMKV();
 
-  getItem(key: KeyType) {
+  getItem<Value = any>(key: string): Value | null {
     const value = this.storage.getString(key);
-    return value ? JSON.parse(value) : undefined;
+
+    if (value === undefined) {
+      return null;
+    }
+
+    return JSON.parse(value);
   }
 
-  setItem(key: KeyType, value: any) {
-    this.storage.set(key, JSON.stringify(value));
+  setItem(key: string, value: any) {
+    return this.storage.set(key, JSON.stringify(value));
   }
 
-  removeItem(key: KeyType) {
+  removeItem(key: string) {
     this.storage.delete(key);
   }
 
@@ -46,17 +46,17 @@ export default class Storage<KeyType extends string> {
     this.storage.clearAll();
   }
 
-  contains(key: KeyType) {
+  contains(key: string) {
     return this.storage.contains(key);
   }
 
-  subscribe(callback: StorageSubscription<KeyType>) {
+  subscribe(callback: StorageSubscription) {
     this.eventEmitter.subscribe('storage', callback);
 
     return () => this.unsubscribe(callback);
   }
 
-  unsubscribe(callback: StorageSubscription<KeyType>) {
+  unsubscribe(callback: StorageSubscription) {
     this.eventEmitter.unsubscribe('storage', callback);
   }
 }
