@@ -8,5 +8,6 @@ module.exports = {
     'react/jsx-boolean-value': 2,
     'react/react-in-jsx-scope': 0,
     'react-native/no-inline-styles': 0,
+    'no-dupe-class-members': 0, // incompatible with typescript method overload
   },
 };
