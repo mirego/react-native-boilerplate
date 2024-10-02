@@ -2,17 +2,17 @@ import { MMKV } from 'react-native-mmkv';
 import { singleton } from 'tsyringe';
 import EventEmitter from '~/services/event-emitter';
 
-export interface StorageSubscriptionParams<KeyType> {
+export interface StorageSubscriptionParams<KeyType extends string = string> {
   key: KeyType;
   value: any;
 }
 
-export type StorageSubscription<KeyType> = (
+export type StorageSubscription<KeyType extends string = string> = (
   params: StorageSubscriptionParams<KeyType>
 ) => void;
 
 @singleton()
-export default class Storage<KeyType extends string> {
+export default class Storage<KeyType extends string = string> {
   constructor(
     private eventEmitter: EventEmitter<
       'storage',

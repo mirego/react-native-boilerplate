@@ -7,6 +7,8 @@ declare module 'react-native-config' {
     KILLSWITCH_API_URL?: string;
 
     SECRET_PANEL_ENABLED?: string;
+
+    STORAGE_KEY_PREFIX?: string;
   }
 
   export const Config: NativeConfig;

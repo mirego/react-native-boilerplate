@@ -11,6 +11,7 @@ import Geolocation, {
 } from '~/services/geolocation';
 import { useApplicationConfiguration } from '~/hooks/use-application-configuration';
 import { useRemoteConfig } from '~/hooks/use-remote-config';
+import { useNewFeature } from '~/hooks/use-new-feature';
 
 export type HomeScreenProps = RootStackScreenProps<'Home'>;
 
@@ -53,6 +54,7 @@ export function HomeScreen({ navigation }: HomeScreenProps) {
   const [error, setError] = useState<Error | null>(null);
 
   const someFeatureFlag = useRemoteConfig('some_feature_flag');
+  const [isFeatureNew, markSeen] = useNewFeature('new_feature_example');
 
   if (error) {
     throw error;
@@ -100,6 +102,13 @@ export function HomeScreen({ navigation }: HomeScreenProps) {
         <Button onPress={() => toggleLanguages()}>Toggle languages</Button>
 
         {someFeatureFlag && <Text>Feature flag example</Text>}
+
+        {isFeatureNew && (
+          <Flex>
+            <Text>This feature is new</Text>
+            <Button onPress={() => markSeen()}>OK</Button>
+          </Flex>
+        )}
       </Flex>
     </SafeAreaView>
   );
