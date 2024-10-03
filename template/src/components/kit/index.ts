@@ -1,7 +1,6 @@
 export * from './activity-indicator';
 export * from './bottom-sheet';
 export * from './button';
-export * from './card';
 export * from './date-time';
 export * from './flex';
 export * from './icon';
