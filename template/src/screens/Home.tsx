@@ -1,6 +1,7 @@
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useTranslation } from 'react-i18next';
 import { useCallback, useEffect, useState } from 'react';
+import { useWindowDimensions } from 'react-native';
 import { RootStackScreenProps } from '../navigation/RootNavigator';
 import { ActivityIndicator, Button, Flex } from '../components/kit';
 import { useToaster, Text } from '~/components/kit';
@@ -12,12 +13,14 @@ import Geolocation, {
 import { useApplicationConfiguration } from '~/hooks/use-application-configuration';
 import { useRemoteConfig } from '~/hooks/use-remote-config';
 import { useNewFeature } from '~/hooks/use-new-feature';
+import { Swiper } from '~/components/kit/swiper';
 
 export type HomeScreenProps = RootStackScreenProps<'Home'>;
 
 export function HomeScreen({ navigation }: HomeScreenProps) {
   const geolocation = useService(Geolocation);
   const { i18n } = useTranslation();
+  const { width } = useWindowDimensions();
 
   const apiUrl = useApplicationConfiguration('API_URL');
   const secretPanelEnabled = useApplicationConfiguration(
@@ -110,6 +113,30 @@ export function HomeScreen({ navigation }: HomeScreenProps) {
           </Flex>
         )}
       </Flex>
+
+      <Swiper
+        containerWidth={width}
+        estimatedListSize={{ width, height: 250 }}
+        containerHorizontalPadding={24}
+        data={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
+        gap={16}
+        tileWidth={200}
+        snapToAlignment="start"
+        renderItem={({ item }) => (
+          <Flex
+            width={200}
+            height={250}
+            background="hotpink"
+            radius={12}
+            align="center"
+            justify="center"
+          >
+            <Text size={16} weight="700" centered>
+              {item}
+            </Text>
+          </Flex>
+        )}
+      />
     </SafeAreaView>
   );
 }
